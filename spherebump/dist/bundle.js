@@ -10059,10 +10059,10 @@ module.exports = function (options) {
     video.src = window.URL.createObjectURL(stream)
     document.body.appendChild(video)
     video.addEventListener('loadedmetadata', () => {
-      video.play()
+      video.play().then(()=>{
       const webcam = regl.texture(video)
       regl.frame(() => webcam.subimage(video))
-      options.done(webcam)
+      options.done(webcam) })
     })
   })
 }
