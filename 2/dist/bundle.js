@@ -205,13 +205,12 @@ module.exports = {
 /* 1 */
 /***/ (function(module, exports, __webpack_require__) {
 
-const regl = __webpack_require__(2)();
+const regl = __webpack_require__(2)({pixelRatio:1});
 const mouse = __webpack_require__(3)();
 const wc = __webpack_require__(5);
 
 var fsh = __webpack_require__(16);
 var vsh = __webpack_require__(17);
-
 const pixels = regl.texture();
 let cam = wc({
   regl,
