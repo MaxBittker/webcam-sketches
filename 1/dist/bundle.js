@@ -10052,11 +10052,12 @@ module.exports = function (options) {
   const regl = options.regl
   getUserMedia({video: true, audio: false}, function (err, stream) {
     if (err) {
+      console.log(err);
       options.error && options.error(err)
       return
     }
     const video = document.createElement('video')
-    video.src = window.URL.createObjectURL(stream)
+    video.srcObject = stream
     document.body.appendChild(video)
     video.addEventListener('loadedmetadata', () => {
       video.play().then(()=>{

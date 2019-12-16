@@ -10055,7 +10055,7 @@ module.exports = function (options) {
       return
     }
     const video = document.createElement('video')
-    video.src = window.URL.createObjectURL(stream)
+    video.srcObject = stream
     document.body.appendChild(video)
     video.addEventListener('loadedmetadata', () => {
       video.play().then(()=>{
